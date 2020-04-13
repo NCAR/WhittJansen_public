@@ -2,7 +2,7 @@
 Matlab code for the box model reported in Whitt and Jansen (2020) "Slower nutrient stream suppresses SubarcticAtlantic biological productivity in global warming"
 Submitted to PNAS. January 15, 2020.
 
-This code should not be treated as a black box. Contact us with questions: dwhitt@ucar.edu, mfj@uchicago.edu
+This code should not be treated as a black box. Contact us with questions.
 
 Running scripts in the top directory with names starting "plot" will generate several of the figure files in the paper.
 
