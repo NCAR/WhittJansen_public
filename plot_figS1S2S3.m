@@ -11,7 +11,7 @@ addpath ./utility/
 %% climatechangeflag = 1 (MLD and PSI changing together); fig S3
 %% climatechangeflag = 2 (only MLD changing, fixed PSI)
 %% climatechangeflag = 3 (only PSI changing, fixed MLD)
-climatechangeflag = 0;
+climatechangeflag = 3;
 %%
 
 bgcparams=set_bgcparams_fn();
@@ -45,11 +45,11 @@ dovis=1;
  Sequib=Soutmat(:,:,end);
  
  if climatechangeflag == 1
-save 'Sequib2100.mat' Sequib
+%save 'Sequib2100.mat' Sequib
  elseif climatechangeflag == 2
-save 'Sequib2100MLDonly.mat' Sequib
+%save 'Sequib2100MLDonly.mat' Sequib
   elseif climatechangeflag == 3
-save 'Sequib2100PSIonly.mat' Sequib
+%save 'Sequib2100PSIonly.mat' Sequib
  elseif climatechangeflag == 0
  save 'Sequibtest.mat' Sequib
  end
