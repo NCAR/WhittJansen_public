@@ -11,7 +11,7 @@ addpath ./utility/
 %% climatechangeflag = 1 (MLD and PSI changing together); fig S3
 %% climatechangeflag = 2 (only MLD changing, fixed PSI)
 %% climatechangeflag = 3 (only PSI changing, fixed MLD)
-climatechangeflag = 3;
+climatechangeflag = 0;
 %%
 
 bgcparams=set_bgcparams_fn();

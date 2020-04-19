@@ -331,10 +331,12 @@ end
 figure;
 Dwodelta=Dwodelta.*goodkn;
 scatter(Dwodelta(:),SINK(:)./PROD(:),28,Ng(:),'filled');
+hold on
+plot(linspace(.1,4,41),exp(-linspace(.1,4,41)),'k--','linewidth',1)
 caxis([11 23])
 colormap(cmocean('deep',32));
 cbh=colorbar;
-ylabel(cbh,'N_s','fontsize',18)
+ylabel(cbh,'N_{sub}','fontsize',18)
 
 A=1./Dwodelta(:);
 B=SINK(:)./PROD(:);
@@ -362,7 +364,7 @@ xlim([0 4])
 ylim([11 23])
 grid on;
 xlabel('D_w/\delta')
-ylabel('N_{s}');
+ylabel('N_{sub}');
 set(gcf,'color','w')
 set(gca,'fontsize',18)
 

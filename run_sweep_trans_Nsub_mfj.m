@@ -1,4 +1,4 @@
-% run for fig S8
+% run for fig S9
 clear all;
 close all;
 restoredefaultpath;
