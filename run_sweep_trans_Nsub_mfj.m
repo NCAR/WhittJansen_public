@@ -5,7 +5,7 @@ restoredefaultpath;
 addpath ./1Dmodel
 addpath ./utility/
 
-for scen = 2:3
+for scen = 1:4
     clearvars -except scen
     if scen == 1
         strscenario='default'
@@ -13,6 +13,8 @@ for scen = 2:3
         strscenario='PSIonly'
     elseif scen == 3
         strscenario='MLDonly'
+    elseif scen == 4
+        strscenario='no_phys'
     end
     
     bgcparams=set_bgcparams_fn();
@@ -20,12 +22,15 @@ for scen = 2:3
         bgcparams.bndmocflag = 0;
     elseif scen == 3
         bgcparams.bnpsiflag =0;
+    elseif scen == 4
+        bgcparams.bnpsiflag =0;
+        bgcparams.bndmocflag = 0;
     end
     
-    for ibn=1:10
+    for ibn=1:2
         clearvars -except bgcparams Smaster ibn strscenario scen
         bgcparams.bnrate=1.2E-7;
-        bgcparams.Nsubrate=-(ibn-1)*(.5./80./360); % decline at a rate between 0 and 5 mmol/m3 per 80 years
+        bgcparams.Nsubrate=-(ibn-1)*(2.2./80./360); % decline at a rate of 0 or 2.2 mmol/m3 per 80 years
         
         dovis=0;
         yrs=80;
@@ -37,5 +42,5 @@ for scen = 2:3
         Smaster{ibn}.toutmat=toutmat;
         Smaster{ibn}.bgcparams=bgcparams;
     end
-    save(strcat('sweep_trans_Nsub_',strscenario,'.mat'),'Smaster')
+    save(strcat('sweep_trans_Nsub_mfj_',strscenario,'.mat'),'Smaster')
 end
